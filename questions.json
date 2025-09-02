@@ -1,0 +1,6 @@
+{
+    "Raw/Table": "Here is some raw data in table form. What was the {METRIC} of the {CHARACTERISTIC} of the data? Give only the number as an output with no other output. \n {DATA}",
+    "Raw/Embedded": "Here is some raw data embedded as text. What was the {METRIC} of the {CHARACTERISTIC} of the data? Give only the number as an output with no other output. \n {DATA}",
+    "Processed/Table": "Here is some processed data in table form. What was the {METRIC} of the {CHARACTERISTIC} of the data? Give only the number as an output with no other output. \n {DATA}",
+    "Processed/Embeded": "Here is some processed data embedded as text. What was the {METRIC} of the {CHARACTERISTIC} of the data? Give only the number with no other output. \n {DATA}"
+}
