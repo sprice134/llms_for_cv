@@ -1,0 +1,2 @@
+model_label,tasks,successful_outputs,success_rate,valid_json_rate,valid_tool_call_rate,executable_rate,routing_accuracy,strict_routing_accuracy,result_accuracy,end_to_end_accuracy,coverage_correct,mean_latency_s,mean_total_tokens
+qwen3.6-35b-a3b,555,555,1.0,1.0,0.9981981981981982,0.9981981981981982,0.9981981981981982,0.9243243243243243,0.9981981981981982,0.9981981981981982,0.9981981981981982,5.716953539752259,2073.1423423423425

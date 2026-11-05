@@ -1,0 +1,188 @@
+defaults:
+  temperature: 0.0
+  max_tokens: 512
+  timeout_seconds: 300
+  retries: 2
+  system_prompt: You are a materials characterization assistant. Answer SEM powder
+    morphology queries accurately and concisely. Return only the requested value or
+    label.
+models:
+- label: gpt-5.4-mini-none
+  provider: openai
+  model_id: gpt-5.4-mini
+  api: chat_completions
+  reasoning_effort: none
+  temperature: 0.0
+  max_tokens: 512
+  access: api
+  paper_role: primary_api_latency_baseline
+- label: gpt-5.4-nano-none
+  provider: openai
+  model_id: gpt-5.4-nano
+  api: chat_completions
+  reasoning_effort: none
+  temperature: 0.0
+  max_tokens: 512
+  access: api
+  paper_role: cheapest_api_baseline
+- label: gpt-5.4-nano-medium
+  provider: openai
+  model_id: gpt-5.4-nano
+  api: chat_completions
+  reasoning_effort: medium
+  temperature: 0.0
+  max_tokens: 1024
+  access: api
+  paper_role: cheapest_api_reasoning_ablation
+- label: gpt-5.4-mini-medium
+  provider: openai
+  model_id: gpt-5.4-mini
+  api: chat_completions
+  reasoning_effort: medium
+  temperature: 0.0
+  max_tokens: 1024
+  access: api
+  paper_role: api_reasoning_ablation
+- label: gpt-5.6-luna-none
+  provider: openai
+  model_id: gpt-5.6-luna
+  api: chat_completions
+  reasoning_effort: none
+  temperature: 0.0
+  max_tokens: 512
+  access: api
+  optional: true
+  paper_role: optional_latest_low_cost_api
+- label: gpt-5.6-luna-medium
+  provider: openai
+  model_id: gpt-5.6-luna
+  api: chat_completions
+  reasoning_effort: medium
+  temperature: 0.0
+  max_tokens: 1024
+  access: api
+  optional: true
+  paper_role: optional_latest_low_cost_api_reasoning_ablation
+- label: gemma-4-31b
+  provider: lmstudio
+  model_id: gemma-4-31b
+  temperature: 0.0
+  max_tokens: 8192
+  vllm_stop_sequences:
+  - <end_of_turn>
+  - <start_of_turn>
+  vllm_request_extra_body:
+    chat_template_kwargs:
+      enable_thinking: true
+  access: local
+  family: Gemma
+  architecture: dense
+  qat: false
+  load:
+    model_key: google/gemma-4-31b
+    identifier: gemma-4-31b
+    context_length: 131072
+    gpu: max
+    disallow_patterns:
+    - qat
+    - -qat
+  paper_role: local_dense_gemma
+- label: gemma-4-26b-a4b
+  provider: lmstudio
+  model_id: gemma-4-26b-a4b
+  temperature: 0.0
+  max_tokens: 8192
+  vllm_stop_sequences:
+  - <end_of_turn>
+  - <start_of_turn>
+  vllm_request_extra_body:
+    chat_template_kwargs:
+      enable_thinking: true
+  access: local
+  family: Gemma
+  architecture: moe
+  total_params_b: 26
+  active_params_b: 4
+  qat: false
+  load:
+    model_key: google/gemma-4-26b-a4b
+    identifier: gemma-4-26b-a4b
+    context_length: 131072
+    gpu: max
+    disallow_patterns:
+    - qat
+    - -qat
+  paper_role: local_moe_gemma
+- label: qwen3.6-35b-a3b
+  provider: lmstudio
+  model_id: qwen3.6-35b-a3b
+  temperature: 0.0
+  max_tokens: 32768
+  vllm_request_extra_body:
+    chat_template_kwargs:
+      enable_thinking: true
+  access: local
+  family: Qwen
+  architecture: moe
+  total_params_b: 35
+  active_params_b: 3
+  load:
+    model_key: qwen/qwen3.6-35b-a3b
+    identifier: qwen3.6-35b-a3b
+    context_length: 131072
+    gpu: max
+  paper_role: local_qwen_moe_comparison
+- label: gpt-oss-20b
+  provider: lmstudio
+  model_id: gpt-oss-20b
+  temperature: 0.0
+  max_tokens: 65536
+  access: local
+  family: GPT-OSS
+  load:
+    model_key: openai/gpt-oss-20b
+    identifier: gpt-oss-20b
+    context_length: 131072
+    gpu: max
+  paper_role: local_open_reasoning_default
+- label: gpt-oss-20b-low
+  provider: lmstudio
+  model_id: gpt-oss-20b
+  reasoning_level: low
+  temperature: 0.0
+  max_tokens: 65536
+  access: local
+  family: GPT-OSS
+  load:
+    model_key: openai/gpt-oss-20b
+    identifier: gpt-oss-20b
+    context_length: 131072
+    gpu: max
+  paper_role: local_open_reasoning_low
+- label: gpt-oss-20b-medium
+  provider: lmstudio
+  model_id: gpt-oss-20b
+  reasoning_level: medium
+  temperature: 0.0
+  max_tokens: 65536
+  access: local
+  family: GPT-OSS
+  optional: true
+  load:
+    model_key: openai/gpt-oss-20b
+    identifier: gpt-oss-20b
+    context_length: 131072
+    gpu: max
+  paper_role: local_open_reasoning_optional
+- label: bonsai-8b
+  provider: lmstudio
+  model_id: bonsai-8b
+  temperature: 0.0
+  max_tokens: 16384
+  access: local
+  family: Bonsai
+  backend:
+    kind: vllm
+    model_key: prism-ml/Bonsai-8B-unpacked
+    identifier: bonsai-8b
+  paper_role: local_bonsai_8b_comparison

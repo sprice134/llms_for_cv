@@ -1,0 +1,2 @@
+model_label,tasks,successful_outputs,success_rate,valid_json_rate,valid_tool_call_rate,executable_rate,routing_accuracy,strict_routing_accuracy,result_accuracy,end_to_end_accuracy,coverage_correct,mean_latency_s,mean_total_tokens
+gpt-5.6-luna-none,555,555,1.0,1.0,1.0,1.0,1.0,0.9459459459459459,1.0,1.0,1.0,1.5303580096178175,1094.018018018018

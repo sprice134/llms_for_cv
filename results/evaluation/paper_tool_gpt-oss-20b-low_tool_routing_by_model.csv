@@ -1,0 +1,2 @@
+model_label,tasks,successful_outputs,success_rate,valid_json_rate,valid_tool_call_rate,executable_rate,routing_accuracy,strict_routing_accuracy,result_accuracy,end_to_end_accuracy,coverage_correct,mean_latency_s,mean_total_tokens
+gpt-oss-20b-low,555,555,1.0,1.0,1.0,0.972972972972973,0.9711711711711711,0.9009009009009009,0.972972972972973,0.9711711711711711,0.9711711711711711,0.9288159450713277,1352.963963963964

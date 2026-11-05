@@ -1,0 +1,7 @@
+characterization_objective,input_condition,n,parsed_n,correct_n,accuracy
+Larger median particle size,Raw particles,390,390,297,0.7615384615384615
+Larger median particle size,Processed,390,386,365,0.9358974358974359
+Wider normalized size distribution,Raw particles,390,388,231,0.5923076923076923
+Wider normalized size distribution,Processed,390,390,356,0.9128205128205128
+More circular particle morphology,Raw particles,390,385,320,0.8205128205128205
+More circular particle morphology,Processed,390,390,382,0.9794871794871794

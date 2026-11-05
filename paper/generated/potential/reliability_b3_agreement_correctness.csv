@@ -1,0 +1,14 @@
+model_label,model,model_class,same_correct_n,same_correct_pct,same_wrong_n,same_wrong_pct,disagreed_n,disagreed_pct,same_mixed_n,same_mixed_pct,groups
+gemma-4-31b,Gemma4 31B,Open-weight / local,116,0.453125,123,0.48046875,17,0.06640625,0,0.0,256
+qwen3.6-35b-a3b,Qwen3.6-35B-A3B,Open-weight / local,234,0.9140625,21,0.08203125,1,0.00390625,0,0.0,256
+gpt-oss-20b-low,GPT-OSS-20B (Low),Open-weight / local,178,0.6953125,32,0.125,46,0.1796875,0,0.0,256
+gpt-oss-20b-medium,GPT-OSS-20B (Medium),Open-weight / local,177,0.69140625,35,0.13671875,44,0.171875,0,0.0,256
+gpt-oss-20b,GPT-OSS-20B (Default),Open-weight / local,176,0.6875,39,0.15234375,41,0.16015625,0,0.0,256
+gemma-4-26b-a4b,Gemma4-26B-A4B,Open-weight / local,69,0.26953125,157,0.61328125,30,0.1171875,0,0.0,256
+bonsai-8b,Bonsai-8B,Open-weight / local,107,0.41796875,149,0.58203125,0,0.0,0,0.0,256
+gpt-5.6-luna-medium,GPT-5.6-Luna (Medium),GPT series / API,190,0.7421875,0,0.0,66,0.2578125,0,0.0,256
+gpt-5.6-luna-none,GPT-5.6-Luna (Instant),GPT series / API,170,0.6640625,20,0.078125,66,0.2578125,0,0.0,256
+gpt-5.4-mini-medium,GPT-5.4-Mini (Medium),GPT series / API,194,0.7578125,3,0.01171875,59,0.23046875,0,0.0,256
+gpt-5.4-mini-none,GPT-5.4-Mini (Instant),GPT series / API,176,0.6875,28,0.109375,52,0.203125,0,0.0,256
+gpt-5.4-nano-medium,GPT-5.4-Nano (Medium),GPT series / API,182,0.7109375,8,0.03125,66,0.2578125,0,0.0,256
+gpt-5.4-nano-none,GPT-5.4-Nano (Instant),GPT series / API,145,0.56640625,61,0.23828125,50,0.1953125,0,0.0,256

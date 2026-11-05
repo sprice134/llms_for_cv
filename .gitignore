@@ -1,0 +1,11 @@
+__pycache__/
+.venv/
+.cache/
+*.py[cod]
+results/raw/
+results/figures/
+results/evaluation/*_scores.csv
+results/manifests/*.jsonl
+results/paper_artifacts/
+paper/generated/figures/*.png
+paper/generated/figures/fig_speed_bars.*

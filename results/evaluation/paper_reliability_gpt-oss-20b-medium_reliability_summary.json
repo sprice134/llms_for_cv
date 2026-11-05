@@ -1,0 +1,11 @@
+{
+  "groups": 256,
+  "mean_exact_response_agreement": 0.828125,
+  "mean_parsed_answer_agreement": 0.8125,
+  "mean_parse_consistency": 0.9609375,
+  "mean_parse_success_rate": 0.92578125,
+  "mean_accuracy_rate": 0.7473958333333334,
+  "mean_accuracy_variance": 0.015625,
+  "mean_numeric_prediction_std": 127.34056233251879,
+  "mean_numeric_prediction_rel_range": 0.07662222624909973
+}

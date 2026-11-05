@@ -1,0 +1,207 @@
+project:
+  name: ai4mat_characterization_interface
+  default_image_limit: 20
+  expansion_image_limit: 20
+  random_seed: 20260805
+
+paths:
+  images_map: data/historical/images.json
+  morphology_root: data/morphology/csvs
+  historical_results: data/historical/experiments.csv
+  manifests_dir: results/manifests
+  raw_results_dir: results/raw
+  evaluation_dir: results/evaluation
+  figures_dir: results/figures
+
+image_policy:
+  default_limit: 20
+  expansion_limit: 20
+  selected_image_ids:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+
+core_benchmark:
+  enabled: true
+  context: zero_shot
+  features:
+    - area
+    - area_convex
+    - major_axis_length
+    - minor_axis_length
+    - eccentricity
+    - orientation
+    - equivalent_diameter
+    - circularity
+  statistics:
+    - key: mean
+      processed_column: Mean
+    - key: median
+      processed_column: Median
+    - key: range
+      processed_column: Range
+    - key: min
+      processed_column: Min
+    - key: max
+      processed_column: Max
+    - key: iqr
+      prompt_label: IQR
+      processed_column: IQR
+    - key: q1
+      prompt_label: Q1
+      processed_column: Q1
+    - key: q3
+      prompt_label: Q3
+      processed_column: Q3
+  encodings:
+    - key: processed_table
+      legacy_label: Processed/Table
+      data_kind: processed
+      serialization: table
+      suffix: _processed.csv
+      prompt_template: "Here is processed SEM powder morphology data in CSV table form. What was the {statistic} of the {feature} of the data? Give only the number as an output with no other output.\n{data}"
+    - key: processed_text
+      legacy_label: Processed/Embeded
+      data_kind: processed
+      serialization: text
+      suffix: .txt
+      prompt_template: "Here is processed SEM powder morphology data embedded as text. What was the {statistic} of the {feature} of the data? Give only the number as an output with no other output.\n{data}"
+    - key: raw_table
+      legacy_label: Raw/Table
+      data_kind: raw
+      serialization: table
+      suffix: _raw.csv
+      prompt_template: "Here is per-particle SEM powder morphology data in CSV table form. What was the {statistic} of the {feature} of the data? Give only the number as an output with no other output.\n{data}"
+    - key: raw_text
+      legacy_label: Raw/Embedded
+      data_kind: raw
+      serialization: text
+      suffix: _raw.txt
+      prompt_template: "Here is per-particle SEM powder morphology data embedded as text. What was the {statistic} of the {feature} of the data? Give only the number as an output with no other output.\n{data}"
+
+interface_suite:
+  enabled: true
+  numeric_tasks:
+    - key: d10_equivalent_diameter
+      feature: equivalent_diameter
+      statistic: percentile_10
+      prompt_label: D10 equivalent diameter
+      units: pixels
+    - key: d50_equivalent_diameter
+      feature: equivalent_diameter
+      statistic: percentile_50
+      prompt_label: D50 equivalent diameter
+      units: pixels
+    - key: d90_equivalent_diameter
+      feature: equivalent_diameter
+      statistic: percentile_90
+      prompt_label: D90 equivalent diameter
+      units: pixels
+    - key: circularity_median
+      feature: circularity
+      statistic: median
+      prompt_label: median circularity
+      units: unitless
+    - key: size_distribution_span
+      feature: equivalent_diameter
+      statistic: d90_minus_d10_over_d50
+      prompt_label: size distribution span, calculated as (D90-D10)/D50
+      units: unitless
+  pairwise_tasks:
+    enabled: true
+    max_pairs: 30
+    comparisons:
+      - key: larger_median_equivalent_diameter
+        feature: equivalent_diameter
+        statistic: median
+        relation: greater
+        prompt_label: larger median equivalent diameter
+      - key: wider_size_distribution
+        feature: equivalent_diameter
+        statistic: d90_minus_d10_over_d50
+        relation: greater
+        prompt_label: wider equivalent-diameter size distribution
+      - key: more_spherical_particles
+        feature: circularity
+        statistic: median
+        relation: greater
+        prompt_label: more circular median particle shape
+  modes:
+    - key: raw_text
+      description: LLM computes from per-particle text.
+    - key: routed_json
+      description: Deterministic characterization facts are routed to the LLM for retrieval.
+
+case_study:
+  enabled: true
+  stage2_topk:
+    enabled: true
+    pair_count: 30
+    pairs_per_stratum: 10
+    top_k: 3
+    random_seed: 20260805
+    direct_features:
+      - area
+      - area_bbox
+      - area_convex
+      - area_filled
+      - major_axis_length
+      - minor_axis_length
+      - equivalent_diameter
+      - feret_diameter_max
+      - perimeter
+      - eccentricity
+      - solidity
+      - extent
+      - circularity
+    derived_features:
+      - aspect_ratio
+      - elongation
+      - convexity_deficit
+      - bounding_box_fill
+      - perimeter_to_diameter_ratio
+    statistics:
+      - median
+      - iqr
+      - coefficient_of_variation
+      - percentile_10
+      - percentile_90
+      - d90_minus_d10_over_d50
+
+tool_routing:
+  enabled: true
+  pair_count: 30
+  top_k: 3
+
+reliability:
+  repeat_count: 3
+  stratified_subset_size: 256
+  temperature: 0.0
+  selection_seed: 20260805
+
+evaluation:
+  primary_threshold_pct: 1.0
+  threshold_sweep_pct:
+    - 0.1
+    - 0.5
+    - 1.0
+    - 5.0
+  bootstrap_iterations: 20000
+  bootstrap_seed: 20260805

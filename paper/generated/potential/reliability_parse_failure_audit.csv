@@ -1,0 +1,14 @@
+model_label,model,total,parsed,parse_failures,not_parseable_or_error,blank_reasoning_length,blank_length_other,blank_other,nonblank_unparsed,run_error_or_missing
+gpt-5.6-luna-medium,GPT-5.6-Luna (Medium),768,690,78,78,78,0,0,0,0
+gpt-5.6-luna-none,GPT-5.6-Luna (Instant),768,768,0,0,0,0,0,0,0
+gpt-5.4-mini-medium,GPT-5.4-Mini (Medium),768,618,150,150,150,0,0,0,0
+gpt-5.4-mini-none,GPT-5.4-Mini (Instant),768,768,0,0,0,0,0,0,0
+gpt-5.4-nano-medium,GPT-5.4-Nano (Medium),768,651,117,117,117,0,0,0,0
+gpt-5.4-nano-none,GPT-5.4-Nano (Instant),768,768,0,0,0,0,0,0,0
+gemma-4-31b,Gemma4 31B,768,768,0,0,0,0,0,0,0
+qwen3.6-35b-a3b,Qwen3.6-35B-A3B,768,744,0,24,0,0,0,0,24
+gpt-oss-20b-low,GPT-OSS-20B (Low),768,734,0,34,0,0,0,0,34
+gpt-oss-20b-medium,GPT-OSS-20B (Medium),768,711,1,57,0,0,0,1,56
+gpt-oss-20b,GPT-OSS-20B (Default),768,723,2,45,0,0,0,2,43
+gemma-4-26b-a4b,Gemma4-26B-A4B,768,768,0,0,0,0,0,0,0
+bonsai-8b,Bonsai-8B,768,768,0,0,0,0,0,0,0

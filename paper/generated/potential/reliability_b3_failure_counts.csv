@@ -1,0 +1,14 @@
+model_label,model,model_class,empty_or_error_outputs,status_errors,empty_success_outputs,length_truncation_failures,parse_failures,responses
+gemma-4-31b,Gemma4 31B,Open-weight / local,0,0,0,0,0,768
+qwen3.6-35b-a3b,Qwen3.6-35B-A3B,Open-weight / local,24,24,0,0,0,768
+gpt-oss-20b-low,GPT-OSS-20B (Low),Open-weight / local,34,34,0,0,0,768
+gpt-oss-20b-medium,GPT-OSS-20B (Medium),Open-weight / local,56,56,0,0,1,768
+gpt-oss-20b,GPT-OSS-20B (Default),Open-weight / local,43,43,0,0,2,768
+gemma-4-26b-a4b,Gemma4-26B-A4B,Open-weight / local,0,0,0,0,0,768
+bonsai-8b,Bonsai-8B,Open-weight / local,0,0,0,0,0,768
+gpt-5.6-luna-medium,GPT-5.6-Luna (Medium),GPT series / API,0,0,0,0,0,768
+gpt-5.6-luna-none,GPT-5.6-Luna (Instant),GPT series / API,0,0,0,0,0,768
+gpt-5.4-mini-medium,GPT-5.4-Mini (Medium),GPT series / API,0,0,0,0,0,768
+gpt-5.4-mini-none,GPT-5.4-Mini (Instant),GPT series / API,0,0,0,0,0,768
+gpt-5.4-nano-medium,GPT-5.4-Nano (Medium),GPT series / API,0,0,0,0,0,768
+gpt-5.4-nano-none,GPT-5.4-Nano (Instant),GPT series / API,0,0,0,0,0,768
