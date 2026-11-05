@@ -12,7 +12,7 @@ from typing import Any
 
 import numpy as np
 
-from ai4mat_common import REPO_ROOT, read_json, selected_image_ids, slugify
+from benchmark_utils import REPO_ROOT, read_json, selected_image_ids, slugify
 
 
 GET_STAT_TOOL = "get_morphology_statistic"

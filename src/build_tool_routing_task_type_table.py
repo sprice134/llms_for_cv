@@ -9,7 +9,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from ai4mat_common import REPO_ROOT
+from benchmark_utils import REPO_ROOT
 from build_potential_analyses import MODEL_NAMES
 
 

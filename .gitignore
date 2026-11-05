@@ -1,5 +1,8 @@
 __pycache__/
 .venv/
+.env
+.env.*
+!.env.example
 .cache/
 *.py[cod]
 results/raw/
@@ -8,4 +11,5 @@ results/evaluation/*_scores.csv
 results/manifests/*.jsonl
 results/paper_artifacts/
 paper/generated/figures/*.png
+!paper/generated/figures/workflow.png
 paper/generated/figures/fig_speed_bars.*

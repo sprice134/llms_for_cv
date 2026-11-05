@@ -12,7 +12,7 @@ from typing import Any
 
 import numpy as np
 
-from ai4mat_common import REPO_ROOT, load_yaml, root_path, write_json_atomic
+from benchmark_utils import REPO_ROOT, load_yaml, root_path, write_json_atomic
 
 
 DEFAULT_EXPERIMENTS = "configs/experiments.yaml"

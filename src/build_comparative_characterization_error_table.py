@@ -10,7 +10,7 @@ from typing import Any
 
 import pandas as pd
 
-from ai4mat_common import REPO_ROOT
+from benchmark_utils import REPO_ROOT
 
 
 EVALUATION_DIR = REPO_ROOT / "results" / "evaluation"

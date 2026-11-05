@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from ai4mat_common import REPO_ROOT, iter_jsonl, load_yaml, slugify, write_json_atomic
+from benchmark_utils import REPO_ROOT, iter_jsonl, load_yaml, slugify, write_json_atomic
 
 
 DEFAULT_EXPERIMENTS = "configs/experiments.yaml"

@@ -9,7 +9,7 @@ import random
 from collections import defaultdict
 from typing import Any
 
-from ai4mat_common import iter_jsonl, load_yaml, write_jsonl
+from benchmark_utils import iter_jsonl, load_yaml, write_jsonl
 
 
 DEFAULT_EXPERIMENTS = "configs/experiments.yaml"

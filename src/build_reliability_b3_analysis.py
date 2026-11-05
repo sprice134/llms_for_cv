@@ -11,7 +11,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from ai4mat_common import REPO_ROOT, slugify, write_json_atomic
+from benchmark_utils import REPO_ROOT, slugify, write_json_atomic
 
 
 EVALUATION_DIR = REPO_ROOT / "results" / "evaluation"

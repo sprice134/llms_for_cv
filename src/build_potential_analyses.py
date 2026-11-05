@@ -13,7 +13,7 @@ from typing import Any, Callable
 import numpy as np
 import pandas as pd
 
-from ai4mat_common import REPO_ROOT, iter_jsonl, load_yaml, slugify
+from benchmark_utils import REPO_ROOT, iter_jsonl, load_yaml, slugify
 from evaluate_numeric import score_tool_call
 
 

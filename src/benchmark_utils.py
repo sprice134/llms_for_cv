@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared utilities for the AI4Mat characterization-interface benchmark."""
+"""Shared paths, serialization, and value utilities for the benchmark."""
 
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ def load_yaml(path: str | Path) -> dict[str, Any]:
         import yaml
     except ImportError as exc:  # pragma: no cover - user environment guard.
         raise SystemExit(
-            "PyYAML is required for Ai4Mat configs. Install with: "
+            "PyYAML is required for benchmark configs. Install with: "
             "python -m pip install -r requirements.txt"
         ) from exc
 

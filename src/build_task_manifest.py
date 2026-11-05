@@ -14,7 +14,7 @@ from typing import Any
 
 import numpy as np
 
-from ai4mat_common import (
+from benchmark_utils import (
     REPO_ROOT,
     as_float,
     load_yaml,

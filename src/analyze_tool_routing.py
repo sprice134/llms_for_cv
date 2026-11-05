@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from ai4mat_common import REPO_ROOT, load_yaml
+from benchmark_utils import REPO_ROOT, load_yaml
 
 
 DEFAULT_EXPERIMENTS = "configs/experiments.yaml"
